@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\getInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('info/phpversion', [getInfoController::class, 'phpVersion']);
+Route::get('info/user', [getInfoController::class, 'userInfo']);
+Route::get('info/dbdata', [getInfoController::class, 'dbData']);
